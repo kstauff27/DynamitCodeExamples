@@ -1,0 +1,42 @@
+﻿@model DynamitCodeExamples.ViewModels.QuestionOneViewModel
+
+@{
+    ViewData["Title"] = "Question 1";
+}
+
+<h1>Question 1</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="control-label">Original Paragraph:</label>
+            <textarea asp-for="OriginalParagraph" class="form-control" style="width: 100%; max-width: 100%; height: 200px;"></textarea>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+        <label class="control-label">Word Counts:</label>
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th><label>Word</label></th>
+                    <th><label>Count</label></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.WordCounts)
+                {
+                    <tr>
+                        <td>@item.Word</td>
+                        <td>@item.Count</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
